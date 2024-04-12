@@ -8,7 +8,8 @@
     if ($query && $query['status'] == 'success') {
         echo $query['country'] . ', ' . $query['city'];
     }
-?></p>
+?>
+    </p>
       </div>
       <div class="p-6 md:w-1/3">
         <h1 class="uppercase text-2xl font-bold  leading-none tracking-normal">Around the web</h1>
