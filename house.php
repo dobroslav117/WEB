@@ -25,28 +25,52 @@ class House {
     }
 }
 $houses =[
-    new House(1200000, "wood houses", "Lac Lyster, Coaticook, QC, Canada", "123-456-789", "https://images.unsplash.com/photo-1571055107559-3e67626fa8be?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 6, 9,"Tiffany Heffner","https://images.unsplash.com/photo-1500522144261-ea64433bbe27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"),
-    new House(450000, "Canada House", "
-    Eastern Townships, Estrie, QC, Canada", "633-634-876", "https://plus.unsplash.com/premium_photo-1683917068755-c2890e4824e1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 5, 3,"Mollie Bradley","https://plus.unsplash.com/premium_photo-1678208879883-0d53ec4e1dd9?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
-    new House(4000000, "Holiday Home", "Cabana Raposo, Santa Teresa, ES, Brazil", "547-234-098", "https://plus.unsplash.com/premium_photo-1687996107589-b288bcb27dbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 8, 5,"Beau Conner","https://plus.unsplash.com/premium_photo-1679857225604-c8b1a95ab802?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    new House(750000, "DETACHED HOUSE", "742 Evergreen Terrace", "123-456-789", "https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", 3, 2,"Tiffany Heffner","https://images.unsplash.com/photo-1500522144261-ea64433bbe27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"),
+    new House(450000, "Summer house", "Fort Myers, FL, USA", "789-143-543", "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 5, 3,"Mollie Bradley","https://plus.unsplash.com/premium_photo-1678208879883-0d53ec4e1dd9?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+    new House(4000000, "Family House", "Iowa, Glenwood, United States", "547-234-098", "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 8, 5,"Beau Conner","https://plus.unsplash.com/premium_photo-1679857225604-c8b1a95ab802?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 ];
 function calculateDiscount()
 {
+    // Генеруємо випадковий відсоток знижки від 0 до 30%
     $discountPercent = mt_rand(0, 30);
 
+    // Перевіряємо, чи будинок попадає під акцію (наприклад, якщо відсоток знижки більше 0)
     if ($discountPercent > 0) {
-        return $discountPercent;
+        return $discountPercent; // Повертаємо відсоток знижки
     } else {
-        return false;
+        return false; // Якщо будинок не попадає під акцію, повертаємо false
     }
+}
+function generateHouses($numHouses=0) {
+  $houses=[];
+  for ($i = 0; $i < $numHouses; $i++) {
+      // Генерація випадкових значень для будинку
+      $price = rand(300000, 5000000);
+      $name = ["DETACHED HOUSE", "Summer house", "Family House"][rand(0, 2)];
+      $address = "Address " . ($i + 1);
+      $phoneNumber = "123-456-789";
+      $imageURL = "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Замініть посиланням на реальне зображення
+      $bedrooms = rand(3, 12);
+      $bathrooms = rand(2, 5);
+      $realtor = "Agent " . ($i + 1);
+      $ImgRealtor = "https://via.placeholder.com/150"; // Замініть посиланням на реальне зображення
+
+      $houses[] = new House($price, $name, $address, $phoneNumber, $imageURL, $bedrooms, $bathrooms, $realtor, $ImgRealtor);
+  }
+
+  return $houses;
 }
 ?>
 
 
 <section class="bg-white -mt-12 py-16">
-    <div class="flex items-center justify-center min-h-screen grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+    <div class="flex flex-wrap items-center justify-center min-h-screen gap-[50px] lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+      <?php $newHouses = generateHouses(isset($_GET['houses']) ? intval($_GET['houses']) : 3);
+      $houses = array_merge($houses, $newHouses);
+
+      ?>
         <?php foreach($houses as $house): ?>
-            <!-- <?php $discount = calculateDiscount();?> -->
+            <?php $discount = calculateDiscount();?>
             <div class="max-w-sm w-full py-6 px-3">
             <div class="bg-white shadow-xl rounded-lg overflow-hidden">
               <div class="bg-cover bg-center h-56 p-4" style="background-image: url(<?php echo $house->image; ?>)">
@@ -64,6 +88,7 @@ function calculateDiscount()
                         echo '<p style="font-size: 18px; color: red; text-decoration: line-through;">$' . $house->price . '</p>';
                         echo '<p style="font-size: 24px; color: red;">$' . $discountedPrice . '</p>';
                     } else {
+                        // Якщо знижки немає, виводимо просто поточну ціну
                         echo '<p class="text-3xl text-gray-900">$' . $house->price . '</p>';
                     }
                 ?>
@@ -100,36 +125,18 @@ function calculateDiscount()
 
 
           <?php endforeach; ?>
+
     </div>
-    <h1 class="text-center uppercase text-black text-4xl font-bold  leading-none tracking-normal">
-      Portfolio
-    </h1>
-    <div class="flex flex-row items-center justify-center py-4">
-      <span class="h-1 w-24 bg-black rounded-full mx-2"></span>
-      <svg class="h-12 fill-current text-black " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path
-          d="M6.1 21.98a1 1 0 0 1-1.45-1.06l1.03-6.03-4.38-4.26a1 1 0 0 1 .56-1.71l6.05-.88 2.7-5.48a1 1 0 0 1 1.8 0l2.7 5.48 6.06.88a1 1 0 0 1 .55 1.7l-4.38 4.27 1.04 6.03a1 1 0 0 1-1.46 1.06l-5.4-2.85-5.42 2.85zm4.95-4.87a1 1 0 0 1 .93 0l4.08 2.15-.78-4.55a1 1 0 0 1 .29-.88l3.3-3.22-4.56-.67a1 1 0 0 1-.76-.54l-2.04-4.14L9.47 9.4a1 1 0 0 1-.75.54l-4.57.67 3.3 3.22a1 1 0 0 1 .3.88l-.79 4.55 4.09-2.15z"/>
-      </svg>
-      <span class="h-1 w-24 bg-black rounded-full mx-2"></span>
-    </div>
-    <div class="flex flex-col sm:flex-row sm:flex-wrap px-6 max-w-md md:max-w-6xl mx-auto">
-      <div class="w-full sm:w-1/2 md:w-1/3 p-4 rounded-lg">
-        <img alt="" class="rounded-lg" src="https://francescomansi.me/img/start-tailwind/portfolio/cabin.png">
-      </div>
-      <div class="w-full sm:w-1/2 md:w-1/3 p-4">
-        <img alt="" class="rounded-lg" src="https://francescomansi.me/img/start-tailwind/portfolio/cake.png">
-      </div>
-      <div class="w-full sm:w-1/2 md:w-1/3 p-4">
-        <img alt="" class="rounded-lg" src="https://francescomansi.me/img/start-tailwind/portfolio/circus.png">
-      </div>
-      <div class="w-full sm:w-1/2 md:w-1/3 p-4">
-        <img alt="" class="rounded-lg" src="https://francescomansi.me/img/start-tailwind/portfolio/game.png">
-      </div>
-      <div class="w-full sm:w-1/2 md:w-1/3 p-4">
-        <img alt="" class="rounded-lg" src="https://francescomansi.me/img/start-tailwind/portfolio/safe.png">
-      </div>
-      <div class="w-full sm:w-1/2 md:w-1/3 p-4">
-        <img alt="" class="rounded-lg" src="https://francescomansi.me/img/start-tailwind/portfolio/submarine.png">
-      </div>
+    <div class=" w-full flex ">
+
+      <form method="get" class="m-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <input type="hidden" name="houses" value="<?php echo isset($_GET['houses']) ? intval($_GET['houses']) + 3 : 3; ?>">
+        <button type="submit" class="m-auto bg-green-500 px-8 py-5 rounded-lg text-white hover:bg-green-900 duration-300">Show more</button>
+      </form>
+        <?php
+            if (isset($_GET['houses'])) {
+                $houses = intval($_GET['houses']);
+            }
+        ?>
     </div>
   </section>

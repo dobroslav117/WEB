@@ -12,6 +12,7 @@
 
 <body>
     <?php include 'about.php'; ?>
+    <?php include 'contact.php'; ?>
    <?php include 'house.php';?>
     <?php include 'footer.php'; ?>
 <footer class="bg-gray-900 h-16">
