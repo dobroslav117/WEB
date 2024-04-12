@@ -11,12 +11,10 @@
 </head>
 
 <body>
-    <?php include 'about.php'; ?>
-   <?php include 'house.php';?>
-    <?php include 'footer.php'; ?>
-<footer class="bg-gray-900 h-16">
-  <p class="pt-5 text-center text-white">Copyright © Your Website <?php $today = date("Y"); echo $today; ?></p>
-</footer>
+    <?php include'header.php'?>
+    <?php include'news.php'?>
+    <?php include'subscription.php'?>
+    <?php include'footer.php'?>
     <script>
     var userLang = navigator.language || navigator.userLanguage;
     var userLang_detected = userLang.toLowerCase();
@@ -27,6 +25,9 @@
         document.getElementById('t3').innerHTML = 'User\'s manual <i class="right"></i>';
     }
     </script>
+    <script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
 </body>
 
 </html>
